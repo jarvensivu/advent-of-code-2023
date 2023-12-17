@@ -2,6 +2,7 @@ import functools
 from pathlib import Path
 from utils import read_input
 
+
 def calculate_options(allowed_time, record_distance):
     min_to_beat_record = None
     max_to_beat_record = None
@@ -23,6 +24,7 @@ def calculate_options(allowed_time, record_distance):
 
     return max_to_beat_record - min_to_beat_record + 1
 
+
 def part_one(file_content):
     allowed_times = file_content[0].split(':')[1].split()
     record_distances = file_content[1].split(':')[1].split()
@@ -33,11 +35,13 @@ def part_one(file_content):
 
     return functools.reduce(lambda x, y: x * y, options)
 
+
 def part_two(file_content):
     allowed_time = file_content[0].split(':')[1].replace(' ', '')
     record_distance = file_content[1].split(':')[1].replace(' ', '')
 
     return calculate_options(allowed_time, record_distance)
+
 
 def day_06():
     print("Advent of Code - day 6")
@@ -48,5 +52,6 @@ def day_06():
         print(f"Solution for part one is: {solution1}")
         solution2 = part_two(file_content)
         print(f"Solution for part two is: {solution2}")
+
 
 day_06()

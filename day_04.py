@@ -1,10 +1,12 @@
 from pathlib import Path
 from utils import read_input
 
+
 def part_one(line):
     numbers = line.split(":")[1].replace("|", "").split()
     matches = len(numbers) - len(set(numbers))
     return int(2 ** (matches - 1))
+
 
 def part_two(file_content):
     cards = [1] * len(file_content)
@@ -17,6 +19,7 @@ def part_two(file_content):
 
     return sum(cards)
 
+
 def day_04():
     print("Advent of Code - day 4")
     file_path = Path('.', 'data', 'input_04.txt')
@@ -26,5 +29,6 @@ def day_04():
         print(f"Solution for part one is: {solution1}")
         solution2 = part_two(file_content)
         print(f"Solution for part two is: {solution2}")
+
 
 day_04()

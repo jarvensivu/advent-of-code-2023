@@ -3,6 +3,7 @@ from utils import read_input
 
 max_cubes = { "red": 12, "green": 13, "blue": 14, }
 
+
 def part_one(line):
     game = line.split(":")[1].replace(";", "").replace(",", "").strip().split(" ")
   
@@ -11,6 +12,7 @@ def part_one(line):
             return 0
 
     return int(line.split(":")[0].split(" ")[1])
+
 
 def part_two(line):
     game = line.split(":")[1].replace(";", "").replace(",", "").strip().split(" ")
@@ -23,6 +25,7 @@ def part_two(line):
 
     return min_cubes["red"] * min_cubes["green"] * min_cubes["blue"]
 
+
 def day_02():
     print("Advent of Code - day 2")
     file_path = Path('.', 'data', 'input_02.txt')
@@ -32,5 +35,6 @@ def day_02():
         print(f"Solution for part one is: {solution1}")
         solution2 = sum(part_two(line) for line in file_content)
         print(f"Solution for part two is: {solution2}")
+
 
 day_02()

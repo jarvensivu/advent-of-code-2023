@@ -13,6 +13,7 @@ digit_dictionary = {
     "nine": "9"
 }
 
+
 def find_digits_in_letters(line):
     first_digit = last_digit = None
     for key in digit_dictionary.keys():
@@ -30,6 +31,7 @@ def find_digits_in_letters(line):
                     last_digit = (last_digit_index, digit_dictionary[key])
     return [first_digit, last_digit]
 
+
 def find_digits(line):
     first_digit = last_digit = None
     for index, char in enumerate(line):
@@ -39,6 +41,7 @@ def find_digits(line):
             else:
                 last_digit = (index, char)
     return [first_digit, last_digit]
+
 
 def process_line(line, include_digits_in_letters):
     digits = find_digits(line)
@@ -56,11 +59,13 @@ def process_line(line, include_digits_in_letters):
 
     return int(digits[0][1] + digits[1][1])
 
+
 def process_file(file_path, include_str_digits):
     file_content = read_input(file_path)
     if file_content:
         return sum(process_line(line, include_str_digits) for line in file_content)
     return 0
+
 
 def day_01():
     print("Advent of Code - day 1")
@@ -69,5 +74,6 @@ def day_01():
     print(f"Solution for part one is: {solution1}")
     solution2 = process_file(file_path, True)
     print(f"Solution for part two is: {solution2}")
+
 
 day_01()
